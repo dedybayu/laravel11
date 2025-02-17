@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="{{ asset('/../img/logo1.png') }}">
     <title>Laravel 11</title>
 </head>
-<body class="h-full">
+<body class="h-full bg-gray-50">
     <!--
   This example requires updating your template:
 
@@ -19,7 +19,7 @@
   <body class="h-full">
   ```
 -->
-<div class="min-h-full">
+<div class="">
 
   <x-navbar></x-navbar>
   

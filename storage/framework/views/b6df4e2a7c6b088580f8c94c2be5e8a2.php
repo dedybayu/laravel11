@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="<?php echo e(asset('/../img/logo1.png')); ?>">
     <title>Laravel 11</title>
 </head>
-<body class="h-full">
+<body class="h-full bg-gray-50">
     <!--
   This example requires updating your template:
 
@@ -19,7 +19,7 @@
   <body class="h-full">
   ```
 -->
-<div class="min-h-full">
+<div class="">
 
   <?php if (isset($component)) { $__componentOriginalb9eddf53444261b5c229e9d8b9f1298e = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginalb9eddf53444261b5c229e9d8b9f1298e = $attributes; } ?>

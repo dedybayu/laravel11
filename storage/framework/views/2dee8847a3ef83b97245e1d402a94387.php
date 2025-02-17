@@ -8,18 +8,48 @@
 <?php $attributes = $attributes->except(\App\View\Components\Layout::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
-   <?php $__env->slot('title', null, []); ?> <?php echo e($title); ?> <?php $__env->endSlot(); ?>
+   <?php $__env->slot('title', null, []); ?> 
+    <div class="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0 sm:space-x-4">
+      <?php echo e($title); ?>
 
-  
+      
+     <?php if (isset($component)) { $__componentOriginal9b33c063a2222f59546ad2a2a9a94bc6 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal9b33c063a2222f59546ad2a2a9a94bc6 = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.search','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('search'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal9b33c063a2222f59546ad2a2a9a94bc6)): ?>
+<?php $attributes = $__attributesOriginal9b33c063a2222f59546ad2a2a9a94bc6; ?>
+<?php unset($__attributesOriginal9b33c063a2222f59546ad2a2a9a94bc6); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal9b33c063a2222f59546ad2a2a9a94bc6)): ?>
+<?php $component = $__componentOriginal9b33c063a2222f59546ad2a2a9a94bc6; ?>
+<?php unset($__componentOriginal9b33c063a2222f59546ad2a2a9a94bc6); ?>
+<?php endif; ?>
+
+    </div>
+   <?php $__env->endSlot(); ?>
+
+  <?php echo e($posts->links()); ?>
+
+
+
 
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-0">
     <div class="grid gap-8 lg:grid-cols-3 md:grid-cols-2">
 
-      <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+      <?php $__empty_1 = true; $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
       <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
       <div class="flex justify-between items-center mb-5 text-gray-500">
 
-        <a href="/categories/<?php echo e($post->category->slug); ?>">
+        <a href="/posts?category=<?php echo e($post->category->slug); ?>">
         <span
           class="bg-<?php echo e($post->category->color); ?>-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
           <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -41,10 +71,10 @@
       <p class="mb-5 font-light text-gray-500 dark:text-gray-400"><?php echo e(Str::limit($post['body'], 100)); ?></p>
       <div class="flex justify-between items-center">
         <div class="flex items-center space-x-4">
-        <a href="/authors/<?php echo e($post->author->username); ?>">
+        <a href="/posts?author=<?php echo e($post->author->username); ?>">
           <img class="w-7 h-7 rounded-full" src="/../img/user.png" alt="Jese Leos avatar" />
         </a>
-        <a href="/authors/<?php echo e($post->author->username); ?>">
+        <a href="/posts?author=<?php echo e($post->author->username); ?>">
           <span class="font-medium dark:text-white">
           <?php echo e(Str::words($post->author->name, 2, '')); ?>
 
@@ -65,10 +95,17 @@
         </a>
       </div>
       </article>
-    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+    <div>
+      <p class="font-semibold text-xl my-4">Article Not Found</p>
+      <a href="/posts" class="block text-blue-600 hover:underline">&laquo; Back to all posts</a>
+    </div>
+    <?php endif; ?>
 
     </div>
   </div>
+
+  <?php echo e($posts->links()); ?>
 
 
  <?php echo $__env->renderComponent(); ?>

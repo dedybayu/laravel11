@@ -8,7 +8,9 @@
 <?php $attributes = $attributes->except(\App\View\Components\Layout::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
-   <?php $__env->slot('title', null, []); ?> <?php echo e($title); ?> <?php $__env->endSlot(); ?>
+   <?php $__env->slot('title', null, []); ?> 
+    <h1 class="text-3xl font-bold tracking-tight text-gray-900"><?php echo e($title); ?></h1>
+   <?php $__env->endSlot(); ?>
   <h3>INI Contact</h3>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
