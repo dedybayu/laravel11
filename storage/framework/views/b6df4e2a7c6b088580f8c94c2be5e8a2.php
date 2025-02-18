@@ -7,10 +7,10 @@
     <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css','resources/js/app.js']); ?>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="icon" type="image/png" href="<?php echo e(asset('/../img/logo1.png')); ?>">
-    <title>Laravel 11</title>
+    <link rel="icon" type="image/png" href="<?php echo e(asset('/../img/logo-black.png')); ?>">
+    <title>DBS Production</title>
 </head>
-<body class="h-full bg-gray-50">
+<body class="h-full">
     <!--
   This example requires updating your template:
 
@@ -69,9 +69,9 @@
     </main>
   </div>
 
-  <footer class="bg-gray-50 dark:bg-gray-800 antialiased">
+  <footer class="bg-gray-200 dark:bg-gray-800 antialiased">
     <div class="p-4 py-6 mx-auto max-w-screen-xl md:p-8 lg:p-10">
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
+        <hr class="my-6 border-gray-300 sm:mx-auto dark:border-gray-700 lg:my-8">
         <div class="text-center">
             <a href="#" class="flex justify-center items-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white">
               <img class="mr-2 w-14 h-14 rounded-full" src="/../img/logo2.png" alt="Jese Leos">
