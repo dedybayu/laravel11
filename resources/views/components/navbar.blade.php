@@ -2,8 +2,8 @@
     let currentScroll = window.pageYOffset;
     hidden = currentScroll > lastScroll;
     lastScroll = currentScroll;
-  })" x-show="!hidden" x-transition:enter="transform transition duration-200 ease-in-out" x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0" 
-      x-transition:leave="transform transition duration-500 ease-in-out" x-transition:leave-start="translate-y-0" x-transition:leave-end="-translate-y-full" class="bg-gray-800 fixed top-0 left-0 w-full transition-transform duration-300 z-50">
+  })" x-show="!hidden" x-transition:enter="transform transition duration-250 ease-in-out" x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0" 
+      x-transition:leave="transform transition duration-250 ease-in-out" x-transition:leave-start="translate-y-0" x-transition:leave-end="-translate-y-full" class="bg-gray-800 fixed top-0 left-0 w-full transition-transform duration-300 z-50">
 
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
