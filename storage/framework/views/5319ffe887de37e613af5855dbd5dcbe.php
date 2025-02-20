@@ -1,5 +1,11 @@
-<nav x-data="{ isOpen: false }" class="bg-gray-800">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<nav x-data="{ isOpen: false, lastScroll: 0, hidden: false }" x-init="window.addEventListener('scroll', () => {
+    let currentScroll = window.pageYOffset;
+    hidden = currentScroll > lastScroll;
+    lastScroll = currentScroll;
+  })" x-show="!hidden" x-transition:enter="transform transition duration-200 ease-in-out" x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0" 
+      x-transition:leave="transform transition duration-500 ease-in-out" x-transition:leave-start="translate-y-0" x-transition:leave-end="-translate-y-full" class="bg-gray-800 fixed top-0 left-0 w-full transition-transform duration-300 z-50">
+
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
         <div class="flex items-center">
           <div class="shrink-0">
@@ -131,7 +137,7 @@
                 <!-- Active: "bg-gray-100 outline-hidden", Not Active: "" -->
                 <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
                 <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                <a href="#" data-modal-target="login-modal" data-modal-toggle="login-modal" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign in</a>
               </div>
             </div>
           </div>

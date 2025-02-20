@@ -19,6 +19,7 @@
   <body class="h-full">
   ```
 -->
+<div class="w-full h-16 bg-white shadow-sm"></div>
 <div class="">
 
   <x-navbar></x-navbar>
@@ -77,5 +78,6 @@
     </div>
   </footer>
   
+  <x-login></x-login>
 </body>
 </html>

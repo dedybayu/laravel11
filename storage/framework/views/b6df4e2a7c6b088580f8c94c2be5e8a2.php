@@ -19,6 +19,7 @@
   <body class="h-full">
   ```
 -->
+<div class="w-full h-16 bg-white shadow-sm"></div>
 <div class="">
 
   <?php if (isset($component)) { $__componentOriginalb9eddf53444261b5c229e9d8b9f1298e = $component; } ?>
@@ -114,5 +115,24 @@
     </div>
   </footer>
   
+  <?php if (isset($component)) { $__componentOriginalb5f19f3ff27ef286a2c7343d075eb88f = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginalb5f19f3ff27ef286a2c7343d075eb88f = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.login','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('login'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?> <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginalb5f19f3ff27ef286a2c7343d075eb88f)): ?>
+<?php $attributes = $__attributesOriginalb5f19f3ff27ef286a2c7343d075eb88f; ?>
+<?php unset($__attributesOriginalb5f19f3ff27ef286a2c7343d075eb88f); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalb5f19f3ff27ef286a2c7343d075eb88f)): ?>
+<?php $component = $__componentOriginalb5f19f3ff27ef286a2c7343d075eb88f; ?>
+<?php unset($__componentOriginalb5f19f3ff27ef286a2c7343d075eb88f); ?>
+<?php endif; ?>
 </body>
 </html><?php /**PATH C:\public_html\laravel11\resources\views/components/layout.blade.php ENDPATH**/ ?>
