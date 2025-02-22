@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>@yield('title')</title>
+        <title>@yield('code') @yield('title')</title>
         @vite(['resources/css/app.css','resources/js/app.js'])
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -48,7 +48,7 @@
             <div class="grid gap-8 lg:grid-cols-12 items-center">
                 <div class="lg:col-span-6 text-center lg:text-left">
                     <h1 class="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-primary-600 dark:text-primary-500">@yield('code')</h1>
-                    <h1 class="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-primary-600 dark:text-primary-500">@yield('message')</h1>
+                    <h1 class="mb-4 text-7xl tracking-tight font-extrabold lg:text-8xl text-primary-600 dark:text-primary-500">@yield('message')</h1>
                     <p class="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl dark:text-white">@yield('text')</p>
                     <p class="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">
                         Sorry, we can't find that page. You'll find lots to explore on the home page.

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\RegisterControler;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
@@ -19,6 +20,9 @@ Route::get('/contact', function () {
     return view('contact', ['title' => 'Contact']);
 });
 
-Route::get('/register', function () {
-    return view('register', ['title' => 'Register']);
+Route::get('/login', function () {
+    return view('login', ['title' => 'Login']);
 });
+
+Route::get('/register', [RegisterControler::class, 'index']);
+Route::post('/register', [RegisterControler::class, 'store']);

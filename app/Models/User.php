@@ -18,11 +18,14 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    // protected $fillable = [
+    //     'name',
+    //     'username',
+    //     'email',
+    //     'password',
+    // ];
+
+    protected $guarded = ['id'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -50,4 +53,5 @@ class User extends Authenticatable
     public function posts(): HasMany{
         return $this->hasMany(Post::class, 'author_id');
     }
+    
 }
